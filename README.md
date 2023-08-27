@@ -1,7 +1,3 @@
-Hello, this is Bing. I'm happy to help you with your task. 😊
-
-You want me to translate this text from Russian to English. Here is the translation:
-
 # Installment Payments Service
 
 This project is an example of implementing the "Installment Payments" service for a financial institution that has signed a contract with an online electronics store. Depending on the product category, the duration of the installment plan may vary. The range of installment plans is: 3-6-9-12-18-24 months. The online store has only three categories with the following installment plan durations:
