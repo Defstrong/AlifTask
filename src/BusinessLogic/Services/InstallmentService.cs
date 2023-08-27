@@ -5,13 +5,11 @@ namespace AlifTask.BusinessLogic;
 public sealed class InstallmentService : IInstallmentService
 {
     private readonly ISmsService _smsService;
-    private readonly IConfiguration _configuration;
     private readonly IProductService _productService;
 
-    public InstallmentService(ISmsService smsService, IConfiguration configuration, IProductService productService)
+    public InstallmentService(ISmsService smsService, IProductService productService)
     {
         _smsService = smsService;
-        _configuration = configuration;
         _productService = productService;
     }
 
@@ -25,9 +23,10 @@ public sealed class InstallmentService : IInstallmentService
         // Represents a markup definition.
         decimal margin = installmentDataDto.Price * installmentPercentage / 100;
 
+        string baseMessageText = "Уважаемый клиент!\nВы купили {0} за {1} сомони с рассрочкой на {2} месяца.\nНаценка составляет {3} сомони.\nОбщая сумма платежа - {4}сомони.";
         // Represents a message about the purchase details.
         string message = string.Format(
-                _configuration["DetaleInstallment"], 
+                baseMessageText,
                 installmentDataDto.ProductType,
                 installmentDataDto.Price,
                 installmentDataDto.ClientInstallmentRange,
@@ -36,5 +35,4 @@ public sealed class InstallmentService : IInstallmentService
         
         return _smsService.SendSms(message, installmentDataDto.PhoneNumberClient);
     }
-
 }
