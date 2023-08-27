@@ -30,6 +30,7 @@ public sealed class InstallmentService : IInstallmentService
                 _configuration["DetaleInstallment"], 
                 installmentDataDto.ProductType,
                 installmentDataDto.Price,
+                installmentDataDto.ClientInstallmentRange,
                 margin,
                 installmentDataDto.Price + margin);
         

@@ -4,7 +4,7 @@ public sealed record InstallmentDataDto
 {
     public decimal Price { get; set; }
 
-    public string PhoneNumberClient { get; set; }
+    public string? PhoneNumberClient { get; set; }
 
     public int ClientInstallmentRange { get; set; }
 
