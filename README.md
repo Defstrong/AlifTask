@@ -20,6 +20,6 @@ To install and run the project, you need to perform the following steps:
 1. Clone the project repository using the command `git clone https://github.com/yourusername/installment-payment-service.git`
 2. Open the project solution `JobAlifTask.sln`
 3. Build the project solution by typing `dotnet build` in the terminal
-4. Run the application by typing `dotnet run` in the terminal
-5. The application will run on a local server and prompt you to enter data about purchasing a product with an installment plan: product name, product price, customer phone number and installment plan duration
+4. Run the application by navigating to `\src\Presentation'` and typing `dotnet run` in a terminal.
+5. The application will run on the local server. Go to `http://localhost:{PORT}/swagger/index.html`. There you will be prompted to enter data on the purchase of goods in installments: the name of the goods, the cost of the goods, the customer's phone number and the installment period.
 6. After entering the data, the application will display the total amount of payment for the product with an installment plan and send an SMS message with purchase details to the customer's phone number
